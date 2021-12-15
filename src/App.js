@@ -1,13 +1,15 @@
-import './App.css';
-import { Routes, Route } from "react-router-dom";
-import Dashboard from './pages/Dashboard';
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path={'/'} element={<Dashboard />} />
-      </Routes>
+      <Router>
+        <Switch>
+          <Route path={['/','/dashboard','/devices']} component={Dashboard} />
+        </Switch>
+      </Router>
     </div>
   );
 }

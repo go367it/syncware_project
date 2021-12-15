@@ -17,7 +17,8 @@ import LogoutIcon from '@heroicons/react/outline/LogoutIcon'
 import UserPhoto from '../Images/user.jpeg'
 
 // importing routes
-import { Routes, Route } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
+import Devices from './Devices/Devices'
 
 
 const Dashboard = () => {
@@ -61,6 +62,7 @@ const Dashboard = () => {
 
             {/* <!-- nav --> */}
             <div style={{ color: "#B3B3B3" }}>
+              <Link to='/'>
               <span
                 className="block flex gap-4 text-left py-4 px-4 rounded transition duration-300 hover:text-white
                 transform duration-300 cursor-pointer
@@ -69,6 +71,8 @@ const Dashboard = () => {
                 <HandIcon className="h-5 w-5" />
                 Welcome
               </span>
+              </Link>
+              <Link to='/dashboard'>
               <span
                 className="block flex gap-4 text-left py-4 px-4 rounded transition duration-300 hover:text-white
               transform duration-300 cursor-pointer"
@@ -76,6 +80,8 @@ const Dashboard = () => {
                 <ChartPie className="h-5 w-5" />
                 Dashboard
               </span>
+              </Link>
+              <Link to='/devices'>
               <span
                 className="block flex gap-4 text-left py-4 px-4 rounded transition duration-300 hover:text-white
                 transform duration-300 cursor-pointer"
@@ -83,6 +89,7 @@ const Dashboard = () => {
                 <DeviceTabletIcon className="h-5 w-5" />
                 Devices
               </span>
+              </Link>
               <span
                 className="block flex gap-4 text-left py-4 px-4 rounded transition duration-300 hover:text-white
                 transform duration-300 cursor-pointer"
@@ -179,7 +186,13 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <div></div>
+            <div>
+
+              <Switch>
+                <Route path={'/devices'} exact component={Devices} />
+              </Switch>
+
+            </div>
 
           </div>
         </div>
