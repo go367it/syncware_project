@@ -19,6 +19,7 @@ import UserPhoto from '../Images/user.jpeg'
 // importing routes
 import { Switch, Route, Link } from "react-router-dom";
 import Devices from './Devices/Devices'
+import Settings from "./Settings/Settings";
 
 
 const Dashboard = () => {
@@ -64,7 +65,7 @@ const Dashboard = () => {
             <div style={{ color: "#B3B3B3" }}>
               <Link to='/'>
               <span
-                className="block flex gap-4 text-left py-4 px-4 rounded transition duration-300 hover:text-white
+                className="block flex gap-4 items-center text-left py-4 px-4 rounded transition duration-300 hover:text-white
                 transform duration-300 cursor-pointer
                 "
               >
@@ -74,7 +75,7 @@ const Dashboard = () => {
               </Link>
               <Link to='/dashboard'>
               <span
-                className="block flex gap-4 text-left py-4 px-4 rounded transition duration-300 hover:text-white
+                className="block flex gap-4 items-center text-left py-4 px-4 rounded transition duration-300 hover:text-white
               transform duration-300 cursor-pointer"
               >
                 <ChartPie className="h-5 w-5" />
@@ -83,49 +84,59 @@ const Dashboard = () => {
               </Link>
               <Link to='/devices'>
               <span
-                className="block flex gap-4 text-left py-4 px-4 rounded transition duration-300 hover:text-white
+                className="block flex gap-4 items-center text-left py-4 px-4 rounded transition duration-300 hover:text-white
                 transform duration-300 cursor-pointer"
               >
                 <DeviceTabletIcon className="h-5 w-5" />
                 Devices
               </span>
               </Link>
+              <Link to='/buisness_insights'>
               <span
-                className="block flex gap-4 text-left py-4 px-4 rounded transition duration-300 hover:text-white
+                className="block flex gap-4 items-center text-left py-4 px-4 rounded transition duration-300 hover:text-white
                 transform duration-300 cursor-pointer"
               >
                 <PresentationChartLineIcon className="h-5 w-5" />
                 Buisness Insights
               </span>
+              </Link>
+              <Link to='/system_builder'>
               <span
-                className="block flex gap-4 text-left py-4 px-4 rounded transition duration-300 hover:text-white
+                className="block flex gap-4 items-center text-left py-4 px-4 rounded transition duration-300 hover:text-white
                 transform duration-300 cursor-pointer"
               >
                 <CursorClickIcon className="h-5 w-5" />
                 System Builder
               </span>
+              </Link>
+              <Link to='/map_layout'>
               <span
-                className="block flex gap-4 text-left py-4 px-4 rounded transition duration-300 hover:text-white
+                className="block flex gap-4 items-center text-left py-4 px-4 rounded transition duration-300 hover:text-white
                 transform duration-300 cursor-pointer"
               >
                 <MapIcon className="h-5 w-5" />
                 Map Layout
               </span>
+              </Link>
               <div className="inset-x-0 bottom-0">
+              <Link to='/settings'>
                 <span
-                  className="block flex gap-4 text-left py-4 px-4 rounded transition duration-300 hover:text-white
+                  className="block flex gap-4 items-center text-left py-4 px-4 rounded transition duration-300 hover:text-white
                   transform duration-300 cursor-pointer"
                 >
                   <CogIcon className="h-5 w-5" />
                   Settings
                 </span>
+                </Link>
+                <Link to='/help'>
                 <span
-                  className="block flex gap-4 text-left py-4 px-4 rounded transition duration-300 hover:text-white
+                  className="block flex gap-4 items-center text-left py-4 px-4 rounded transition duration-300 hover:text-white
                   transform duration-300 cursor-pointer"
                 >
                   <InformationCircleIcon className="h-5 w-5" />
                   Help
                 </span>
+                </Link>
               </div>
             </div>
           </div>
@@ -190,6 +201,7 @@ const Dashboard = () => {
 
               <Switch>
                 <Route path={'/devices'} exact component={Devices} />
+                <Route path='/settings' exact component={Settings} />
               </Switch>
 
             </div>

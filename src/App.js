@@ -7,7 +7,10 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path={['/','/dashboard','/devices']} component={Dashboard} />
+          <Route 
+            path={['/','/dashboard','/devices','/buisness_insights','/system_builder', '/map_layout', '/settings', '/help']} 
+            component={Dashboard} 
+          />
         </Switch>
       </Router>
     </div>
